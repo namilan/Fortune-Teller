@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -148,7 +149,7 @@ public class Main {
 				System.out.println("Shh... shh...");
 				System.out.println("Your fortune is the following...");
 				System.out.println(""+ userFirst + " " + userLast + " will retire in " + retireAge + " with " + moneyMonth + " in the bank, a vacation home in " + vacationSiblings + ", and travel by " + transportationColor + ".");
-							
+				
 		}
 		
 		
