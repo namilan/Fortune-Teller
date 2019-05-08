@@ -6,37 +6,56 @@ public class Main {
 		
 		Scanner input = new Scanner(System.in);
 		
-		// *** Part One of Project ***
 		
-		//Ask for users first name
+		// *** Part One of Project ****
+		
 		System.out.println("Welcome to your fortune! Tell me something... \nLets start with your first name?");
 		String userFirst = input.next();
+		if (userFirst.toLowerCase().contentEquals("quit")) {
+			System.out.println("Nobody likes a quitter...");
+			System.exit(0);
+		}
 		
-		//Text response for users first name
+		//Response for first name
 		System.out.println(userFirst + ", I see, I see ...");
 		
-		//Ask for the users last name
+		
 		System.out.println("Now, what is your last name?");
 		String userLast = input.next();
+		if (userLast.toLowerCase().contentEquals("quit")) {
+			System.out.println("Nobody likes a quitter...");
+			System.exit(0);
+		}
 		
 		//Text response for users last name
 		System.out.println("Ah, " + userLast + ", strong last name. Suits you. ");
 		
-		//Ask for users age
+		
 		System.out.println("So " + userFirst + ", what is your age? Don't be shy...");
+		System.out.println("Type 0 to quit, but remember, nobody likes a quitter.");
 		int userAge = input.nextInt();
+		if (userAge == 0) {
+			System.out.println("Nobody likes a quitter...");
+			System.exit(0);
+		}
+		
 		
 		//Text response for users age
 		System.out.println("There is no way you're " + userAge + " years old. You look amazing.");
 		
-		//Users birth month
+		
 		System.out.println("Now if you had to number the month of your birth ( between 1-12 ), what would yours be?");
+		System.out.println("If you would like to quit, please enter 0.");
 		int userMonth = input.nextInt();
+		if (userMonth == 0) {
+			System.out.println("Nobody likes a quitter...");
+			System.exit(0);
+		}
 		// number is stored use " userMonth" for your response for the even/odd	
 		
 		//Users birth month defined as a Month, not a number.
 		
-		 String futureMonths = "none";
+		String futureMonths = "none";
 		
 		switch (userMonth) {
 		case 1: futureMonths ="January";
@@ -69,13 +88,17 @@ public class Main {
 		// Text response for users month
 		System.out.println(futureMonths + ", splendid!");
 		
-		//Ask for users favorite color using While statement.
-		System.out.println("What color is your favorite? You only have a few to choose from. Type \"Help\" if you need ideas.");
+		//User Color in ROYGBIV color scope. 
+		System.out.println("What color is your favorite out of ROYGBIV? You only have a few to choose from. Type \"Help\" if you need ideas.");
 		
 		String userColor = input.next();
 			while(userColor.toLowerCase().contentEquals("help")) {
 				System.out.println("Red, Orange, Yellow, Green, Blue, Indigo, or Violet");
 				userColor = input.next();
+			}
+			if (userColor.toLowerCase().contentEquals("quit")) {
+				System.out.println("Nobody likes a quitter...");
+				System.exit(0);
 			}
 			
 			//Response to Color
@@ -84,9 +107,14 @@ public class Main {
 			//Line Break
 			System.out.println("");
 			
-			//Ask for users number of siblings
+			
 			System.out.println("How many siblings do you have?");
+			System.out.println("If you would like to quit, please type 99.");
 			int mySiblings = input.nextInt();
+			if (mySiblings == 99) {
+				System.out.println("Nobody likes a quitter...");
+				System.exit(0);
+			}
 			
 			// *** Part Two of Project ****
 			//  Age + Odd / Even = Retire
@@ -139,7 +167,7 @@ public class Main {
 				} else if (userMonth >=5 && userMonth <=8) {
 					moneyMonth ="$90,000";
 				} else if (userMonth >=9 && userMonth <=12) {
-					moneyMonth ="$40000,0000";
+					moneyMonth ="$40,000,000";
 				} else if (userMonth >=13) {
 					moneyMonth ="$0.00";
 				}
